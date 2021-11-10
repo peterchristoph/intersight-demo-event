@@ -1,7 +1,7 @@
 ################################################################################
 # NTP Policy Variables
 variable "organization_moid" {
-  default = "Default"
+  default = "default"
   type = string
 }
 variable "ntp_policy_name" {
