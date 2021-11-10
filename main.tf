@@ -31,13 +31,14 @@ resource "intersight_fabric_eth_network_control_policy" "network_control" {
   name        = "tf-module-ethernet-network-control-policy"
   description = "Terraform Cloud Fabric Ethernet Network Control Policy"
   cdp_enabled = false
-  forgeMac    = "allow"
+  forge_Mac    = "allow"
 
+  /*
   lldp_settings = {
     objectType       = "fabric.LldpSettings"
     receive_enabled  = false
     transmit_enabled = false
-  }
+  }*/
 
   mac_registration_mode = "allVlans"
   uplink_fail_action    = "linkDown"
