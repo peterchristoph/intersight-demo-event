@@ -31,7 +31,7 @@ resource "intersight_fabric_eth_network_control_policy" "network_control" {
   name        = "tf-module-ethernet-network-control-policy"
   description = "Terraform Cloud Fabric Ethernet Network Control Policy"
   cdp_enabled = false
-  forge_Mac    = "allow"
+  forge_mac    = "allow"
 
   /*
   lldp_settings = {
