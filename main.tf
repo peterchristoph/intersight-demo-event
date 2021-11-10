@@ -1,4 +1,4 @@
-resource "intersight_ntp_policy" "ntp1" {
+resource "intersight_ntp_policy" "ntp_policy" {
   name    = var.ntp_policy_name
   enabled = true
   description = var.ntp_policy_description
