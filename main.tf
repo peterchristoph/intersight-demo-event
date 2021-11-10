@@ -151,10 +151,10 @@ resource "intersight_vnic_eth_if" "eth0" {
   }
 }
 
-/*
+
 resource "intersight_vnic_eth_if" "eth1" {
   name  = var.vnic_name_1
-  order = 0
+  order = 1
   placement {
     id        = "MLOM"
     pci_link  = 0
@@ -167,20 +167,19 @@ resource "intersight_vnic_eth_if" "eth1" {
     selector    = "Name eq '${var.mac_pool}'"
   }
   lan_connectivity_policy {
-    moid        = intersight_vnic_lan_connectivity_policy.lan[count.index].id
+    moid        = intersight_vnic_lan_connectivity_policy.lan.id
     object_type = "vnic.LanConnectivityPolicy"
   }
   fabric_eth_network_group_policy {
-    moid = intersight_fabric_eth_network_group_policy.network_group[count.index].id
+    moid = intersight_fabric_eth_network_group_policy.network_group.id
   }
   fabric_eth_network_control_policy {
-    moid = intersight_fabric_eth_network_control_policy.network_control[count.index].id
+    moid = intersight_fabric_eth_network_control_policy.network_control.id
   }
   eth_adapter_policy {
-    moid = intersight_vnic_eth_adapter_policy.ethernet_adapter[count.index].id
+    moid = intersight_vnic_eth_adapter_policy.ethernet_adapter.id
   }
   eth_qos_policy {
-    moid = intersight_vnic_eth_qos_policy.ethernet_qos[count.index].id
+    moid = intersight_vnic_eth_qos_policy.ethernet_qos.id
   }
 }
-*/
