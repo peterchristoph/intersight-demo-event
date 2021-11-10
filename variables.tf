@@ -6,6 +6,7 @@ variable "organization_moid" {
 }
 variable "ntp_policy_name" {
   type = string
+  default = "tf_ntp_policy"
 }
 variable "ntp_policy_description" {
   default = "Createt over Terraform Cloud"
