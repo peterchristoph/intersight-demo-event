@@ -49,7 +49,7 @@ resource "intersight_fabric_eth_network_control_policy" "network_control" {
   }
 }
 
-resource "intersight_vnic_eth_adapter_policy" "v_eth_adapter1" {
+resource "intersight_vnic_eth_adapter_policy" "ethernet_adapter" {
   name                    = "tf-module-ethernet-adapter-policy"
   rss_settings            = true
   uplink_failback_timeout = 5
@@ -134,20 +134,20 @@ resource "intersight_vnic_eth_if" "eth0" {
     selector    = "Name eq '${var.mac_pool}'"
   }
   lan_connectivity_policy {
-    moid        = intersight_vnic_lan_connectivity_policy.lan[count.index].id
+    moid        = intersight_vnic_lan_connectivity_policy.lan[0].id
     object_type = "vnic.LanConnectivityPolicy"
   }
   fabric_eth_network_group_policy {
-    moid = data.intersight_fabric_eth_network_group_policy.tf-module-fabric-eth-network-group-policy.id
+    moid = intersight_fabric_eth_network_group_policy.network_group[0].id
   }
   fabric_eth_network_control_policy {
-    moid = data.intersight_fabric_eth_network_control_policy.tf-module-ethernet-qos-policy.id
+    moid = intersight_fabric_eth_network_control_policy.network_control[0].id
   }
   eth_adapter_policy {
-    moid = data.intersight_vnic_eth_adapter_policy.tf-module-ethernet-adapter-policy.id
+    moid = intersight_vnic_eth_adapter_policy.ethernet_adapter[0].id
   }
   eth_qos_policy {
-    moid = data.intersight_vnic_eth_qos_policy.tf-module-ethernet-qos-policy.results[0].moid
+    moid = intersight_vnic_eth_qos_policy.ethernet_qos[0].id
   }
 }
 
