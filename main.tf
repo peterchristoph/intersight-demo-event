@@ -3,10 +3,10 @@ resource "intersight_ntp_policy" "ntp_policy" {
   enabled = true
   description = var.ntp_policy_description
   ntp_servers = [
-    "10.10.10.20",
-    "10.10.10.21",
-    "10.10.10.22",
-    "10.10.10.23"
+    "10.10.10.200",
+    "10.10.10.210",
+    "10.10.10.220",
+    "10.10.10.230"
   ]
   organization {
     moid   = var.organization_moid
