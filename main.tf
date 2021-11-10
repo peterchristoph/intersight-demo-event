@@ -138,16 +138,16 @@ resource "intersight_vnic_eth_if" "eth0" {
     object_type = "vnic.LanConnectivityPolicy"
   }
   fabric_eth_network_group_policy {
-    moid = intersight_fabric_eth_network_group_policy.tf-module-fabric-eth-network-group-policy.id
+    moid = data.intersight_fabric_eth_network_group_policy.tf-module-fabric-eth-network-group-policy.id
   }
   fabric_eth_network_control_policy {
-    moid = intersight_fabric_eth_network_control_policy.tf-module-ethernet-qos-policy.id
+    moid = data.intersight_fabric_eth_network_control_policy.tf-module-ethernet-qos-policy.id
   }
   eth_adapter_policy {
-    moid = intersight_vnic_eth_adapter_policy.tf-module-ethernet-adapter-policy.id
+    moid = data.intersight_vnic_eth_adapter_policy.tf-module-ethernet-adapter-policy.id
   }
   eth_qos_policy {
-    moid = intersight_vnic_eth_qos_policy.tf-module-ethernet-qos-policy.id
+    moid = data.intersight_vnic_eth_qos_policy.tf-module-ethernet-qos-policy.results[0].moid
   }
 }
 
