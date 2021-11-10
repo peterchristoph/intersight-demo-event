@@ -3,10 +3,10 @@ resource "intersight_ntp_policy" "ntp_policy" {
   enabled = true
   description = var.ntp_policy_description
   ntp_servers = [
-    "10.10.10.200",
-    "10.10.10.210",
-    "10.10.10.220",
-    "10.10.10.230"
+    "10.10.10.20",
+    "10.10.10.21",
+    "10.10.10.22",
+    "10.10.10.23"
   ]
   organization {
     moid   = var.organization_moid
@@ -151,7 +151,7 @@ resource "intersight_vnic_eth_if" "eth0" {
   }
 }
 
-
+/*
 resource "intersight_vnic_eth_if" "eth1" {
   name  = var.vnic_name_1
   order = 1
@@ -182,4 +182,4 @@ resource "intersight_vnic_eth_if" "eth1" {
   eth_qos_policy {
     moid = intersight_vnic_eth_qos_policy.ethernet_qos.id
   }
-}
+}*/
