@@ -151,7 +151,7 @@ resource "intersight_vnic_eth_if" "eth0" {
   }
 }
 
-/*
+
 resource "intersight_vnic_eth_if" "ucs-demo-nicb" {
   name  = var.vnic_name_1
   order = 1
@@ -182,4 +182,4 @@ resource "intersight_vnic_eth_if" "ucs-demo-nicb" {
   eth_qos_policy {
     moid = intersight_vnic_eth_qos_policy.ethernet_qos.id
   }
-}*/
+}
