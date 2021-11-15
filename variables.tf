@@ -41,5 +41,5 @@ variable "vnic_name_0" {
 
 variable "vnic_name_1" {
   type = string
-  default = "eth1"
+  default = "ucs-demo-nicb"
 }
